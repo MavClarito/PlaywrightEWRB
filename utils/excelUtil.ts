@@ -1,15 +1,22 @@
 import * as XLSX from 'xlsx';
 import * as fs from 'fs';
+import * as path from 'path';
 import { TestInfo } from '@playwright/test';
  
 // Get Excel data based on file path and sheet name
 export function getExcelData(filePath: string, sheetName: string) {
-    const workbook = XLSX.readFile(filePath);
+    const resolvedFilePath = path.resolve(__dirname, '..', filePath);
+
+    if (!fs.existsSync(resolvedFilePath)) {
+        throw new Error(`Excel file not found: ${resolvedFilePath}`);
+    }
+
+    const workbook = XLSX.readFile(resolvedFilePath);
     const worksheet = workbook.Sheets[sheetName];
  
     if (!worksheet) {
         throw new Error(
-            `Sheet '${sheetName}' not found in workbook '${filePath}'`
+            `Sheet '${sheetName}' not found in workbook '${resolvedFilePath}'`
         );
     }
     return XLSX.utils.sheet_to_json(worksheet);
@@ -21,7 +28,7 @@ export async function writeExcelResults(
     data: any[],
     outputFile: string
 ) {
-    fs.mkdirSync('./test-results', { recursive: true });
+    fs.mkdirSync(path.dirname(outputFile), { recursive: true });
  
     // Ensure all cell values comply with Excel limits
     const sanitizedData = data.map(row =>
