@@ -13,7 +13,6 @@ export class R25_LoginPage extends BasePage {
   readonly ddlUserMenu: Locator;
   readonly btnProductCatalog: Locator;
 
-
   // Account Balance - Mav
 
   readonly commandLine: Locator;
@@ -60,7 +59,6 @@ export class R25_LoginPage extends BasePage {
     this.ddlUserMenu = page.locator('//span[contains (text(), "User Menu")]')
     this.btnProductCatalog = page.locator('//a[text()=" Product Catalog "]')
 
-
   }
 
   //*****************************PAGE FUNCTIONS or COMPONENTS**************************************** */
@@ -71,8 +69,10 @@ export class R25_LoginPage extends BasePage {
   }
 
   //Account Balance check
-  async commandLineBox(txtinput: any){
-    await this.page.commandLine.fill(String(txtinput ?? '?800'))
+  async commandLineBox(txtinput: string = '?800') {
+    await this.commandLine.waitFor({ state: 'visible' });
+    await this.commandLine.fill(txtinput);
+    await this.enterCommandLine.click();
   }
 
   async login(username: any, password: any) {
