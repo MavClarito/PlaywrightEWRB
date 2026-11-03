@@ -224,8 +224,9 @@ test.describe.serial('Accounts and Deposit UNI Core', { tag: ['@UniCore', '@Regr
         const LoginPage = new R25_LoginPage(page);
         await LoginPage.navigate(url);
         await LoginPage.login(testData[6].IN_Username, testData[6].IN_Password);
-        await LoginPage.clickUserMenu();
-
+        await page.waitForTimeout(5000);
+        //await LoginPage.clickUserMenu();
+        await LoginPage.fillerCMD();
         await LoginPage.waitForPageLoad();
         await page.waitForTimeout(3000);
         await LoginPage.logOut();
@@ -237,19 +238,13 @@ test.describe.serial('Accounts and Deposit UNI Core', { tag: ['@UniCore', '@Regr
         const LoginPage = new R25_LoginPage(page);
         await LoginPage.navigate(url);
         await LoginPage.login(testData[7].IN_Username, testData[7].IN_Password);
+        await LoginPage.clickUserMenu();
+        await LoginPage.fillerCMD();
         await LoginPage.waitForPageLoad();
         await page.waitForTimeout(3000);
         await LoginPage.logOut();
 
     });
-    
-
-    
-
-
-
-
-
 
 });
 

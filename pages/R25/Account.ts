@@ -2,7 +2,7 @@ import { BasePage } from '../BasePage';
 import { Locator, Page } from '@playwright/test';
 
 
-export class R25_Accounnt extends BasePage {
+export class R25_Account extends BasePage {
 
 readonly page: Page;
 
@@ -13,8 +13,6 @@ readonly btnOpenSavingsAccount: Locator;
 readonly btnAmendAccount: Locator;
 readonly btnAuthoriseDeleteAccount: Locator;
 
-// Account Balance - Mav
-//readonly btnAccBalance: Locator;
 
 // Account Maintenance
 readonly ddlAccountMaintenance: Locator;
@@ -168,9 +166,6 @@ this.btnOpenSavingsAccount = page.locator('//a[text()=" Open Savings Account "]'
 this.btnAmendAccount = page.locator('//a[text()=" Amend Account "]');
 this.btnAuthoriseDeleteAccount = page.locator('//a[text()=" Authorise/Delete Account "]');
 
-//Account Balance - Mav
-//this.btnCheckBalance = page.locator(''); 
-
 // Account Maintenance
 this.ddlAccountMaintenance = page.locator('//span[text()=" Account Maintenance "]');
 this.btnAccountMaintenance = page.locator('//a[text()=" Account Maintenance "]');
@@ -321,16 +316,7 @@ this.btnExternalTransactionDetails = page.locator('//a[text()=" External Transac
 
 
  //*****************************PAGE FUNCTIONS or COMPONENTS**************************************** */
-//Menu Click
-/*async menuBtnClick(){
-    await this.menuButton.click();
-}
 
-//Acct.Click
-async clickCheckBalance(){
-    await this.btnCheckBalance.click();
-}
-*/
 
  async clickAccount() {
     await this.ddlAccount.click();
