@@ -1,0 +1,7 @@
+User navigated to URL: https://ewbk01-dev2.ewbk.dev.temenosbanking.cloud/transact-explorer-wa/
+f12103e78ef50bd8b9d03afed68f55dc
+123456
+Input username: irchan
+Click on Login Button.
+User logged out.
+Browser page has been closed.

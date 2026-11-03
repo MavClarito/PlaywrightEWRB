@@ -1,0 +1,14 @@
+{
+  "AdminHub": "https://sso3devportal.ewbc.com:9002/Main",
+  "ClientHub-SIT": "https://easyconnect-dev.eastwestbanker.com",
+  "ClientHub-UAT": "https://easyconnect-uat.eastwestbanker.com",
+  "TestBase": "https://proxy-apim-external-test.eastwestbanker.com/test",
+  "LiveBase": "https://proxy-apim-external-test.eastwestbanker.com/",
+  "Sandbox": "https://proxy-apim-external-test.eastwestbanker.com/sandbox",
+  "ipNotWhitelisted": "https://easyconnect-apiuat.eastwestbanker.com",
+  "Temenos_R25": "https://ewbk01-sit.ewbk.dev.temenosbanking.cloud/transact-explorer-wa/",
+  "R25_Dev2": "https://ewbk01-dev2.ewbk.dev.temenosbanking.cloud/transact-explorer-wa/",
+  "AdminHubTestData": "./testdata/AdminHub.xlsx",
+  "UniCoreTestData": "./testdata/UniCore.xlsx"
+
+}
